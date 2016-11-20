@@ -2,10 +2,10 @@ The objective of this code book is to shed some light on the data fields in the 
 
 ### Identifiers
 
-1. subject - The ID of the test subject
-2. activity - The type of activity performed when the corresponding measurements were taken
+1. subject - The ID of the test subject PersonID, class: integer
+2. activity - The type of activity performed when the corresponding measurements were taken class: factor
 
-### Measurements
+### Measurements (class: numeric)
 
 tBodyAccMeanX
 
