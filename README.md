@@ -61,10 +61,12 @@ Again reads from same location and combine "test" and "train" set with the rbind
 
 We follow the same steps as before.
 
+   '''
    ##Reading Movement
    testMoves <- read.csv("test/Y_test.txt", sep = "", header = FALSE)
    trainMoves <- read.csv("train/Y_train.txt", sep = "", header = FALSE)
    mergedMoves <- rbind(testMoves, trainMoves)
+'''
 
    ##Reading PersonID
    testPerson <- read.csv("test/subject_test.txt", sep = "", header = FALSE)
