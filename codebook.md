@@ -1,11 +1,11 @@
 The objective of this code book is to shed some light on the data fields in the resulting tidy dataset.
 
-# Identifiers
+### Identifiers
 
 1. subject - The ID of the test subject
 2. activity - The type of activity performed when the corresponding measurements were taken
 
-# Measurements
+### Measurements
 
 tBodyAccMeanX
 
@@ -166,7 +166,7 @@ fBodyBodyGyroJerkMagStd
 fBodyBodyGyroJerkMagMeanFreq
 
 
-# Activity Labels
+### Activity Labels
 
 WALKING (value 1): subject was walking during the test 
 
