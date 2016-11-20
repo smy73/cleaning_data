@@ -1,6 +1,6 @@
 The objective of this code book is to shed some light on the data fields in the resulting tidy dataset.
 
-<b>Identifiers
+<b>Identifiers<b>
 
 subject - The ID of the test subject
 activity - The type of activity performed when the corresponding measurements were taken
