@@ -53,41 +53,42 @@ We these two file from UCI HAR Dataset and take relevant data.
    activities <- read.csv("activity_labels.txt", sep = "", header = FALSE)
 
 Again reads from same location and combine "test" and "train" set with the rbind function.
-
+   ```
    ##Reading Sets
    testSet <- read.csv("test/X_test.txt", sep = "", header = FALSE)
    trainSet <- read.csv("train/X_train.txt", sep = "", header = FALSE)
    mergedSet <- rbind(testSet,trainSet)        
-
+   ```
 We follow the same steps as before.
 
-   '''
+   ```
    ##Reading Movement
    testMoves <- read.csv("test/Y_test.txt", sep = "", header = FALSE)
    trainMoves <- read.csv("train/Y_train.txt", sep = "", header = FALSE)
    mergedMoves <- rbind(testMoves, trainMoves)
-'''
-
+   ```
+   ```
    ##Reading PersonID
    testPerson <- read.csv("test/subject_test.txt", sep = "", header = FALSE)
    trainPerson <- read.csv("train/subject_train.txt", sep = "", header = FALSE)
    mergedPerson <- rbind(testPerson, trainPerson)
-
+   ```
 We assign decriptive column names that is kept in features vector to mergedSet we have formed in previous steps. After that, we select all columns that key values passing through this attributes
-
+   ```
    ##Extracting columns which includes measurements
    names(mergedSet) <- features[ ,1]
    mergedSet <- mergedSet[ grepl("std|mean", names(mergedSet), ignore.case = TRUE) ] 
-
+   ```
 Descriptive values for activity columns.
-
+   ```
    #Descriptive ActivityName mapping
    mergedMoves <- merge(mergedMoves, activities, by.x = "V1", by.y = "V1")[2]
    mergedSet <- cbind(mergedPerson, mergedMoves, mergedSet)
    names(mergedSet)[1:2] <- c("PersonID", "Activities")
-
+   ```
 Tidying set according to personID and activities
-
+   ```
    ##Tidying mergedSet
    group_by(mergedSet, PersonID, Activities) %>%
          summarise_each(funs(mean))
+   ```
